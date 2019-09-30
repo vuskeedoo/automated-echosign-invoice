@@ -1,0 +1,5 @@
+env/
+__pycache__/
+echosign/__pycache__/
+gdrive/__pycache__/
+log/
