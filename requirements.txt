@@ -94,7 +94,7 @@ sessioninstaller==0.0.0
 six==1.10.0
 stevedore==1.30.1
 system-service==0.3
-Twisted==18.7.0
+Twisted==19.7.0
 ubuntu-drivers-common==0.0.0
 ufw==0.35
 unattended-upgrades==0.1
