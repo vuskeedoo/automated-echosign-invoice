@@ -120,7 +120,7 @@ virtualenv-clone==0.5.3
 virtualenvwrapper==4.8.4
 w3lib==1.19.0
 websocket-client==0.51.0
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 xdiagnose==3.8.4.1
 xkit==0.0.0
 XlsxWriter==0.7.3
