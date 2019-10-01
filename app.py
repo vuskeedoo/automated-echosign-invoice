@@ -76,22 +76,23 @@ def runEcho():
     token = Echosign.refreshToken()
     esign = Echosign(token)
     time.sleep(CONST_SLEEP)
-
+    count = 0
     # Cycle through dataRow and create Echosign agreements.
-    for i in range(0, CONST_ROW):
-        if dataRow[i]['to'] is not '':
-            logger.info('Sending agreement #'+str(i+1)+ ' to: '+dataRow[i]['to'])
-            logger.debug(dataRow[i])
-            if(esign.putAgreement(dataRow[i]['to'], dataRow[i]['username'], 'DRAFT')):
+    for dRow in dataRow:
+        count += 1
+        if dRow['to'] is not '':
+            logger.info('Sending agreement #'+str(count)+ ' to: '+dRow['to'])
+            logger.debug(dRow)
+            if(esign.putAgreement(dRow['to'], dRow['username'], 'DRAFT')):
                 if(esign.getMergeInfo()):
-                    if(esign.putMergeInfo(dataRow[i])):
+                    if(esign.putMergeInfo(dRow)):
                         esign.putState("IN_PROCESS")
                     else:
-                        logger.error('PUT Merge Info failed to: '+dataRow[i]['to'])
+                        logger.error('PUT Merge Info failed to: '+dRow['to'])
                 else:
-                    logger.error('GET Merge Info failed to: '+dataRow[i]['to'])
+                    logger.error('GET Merge Info failed to: '+dRow['to'])
             else:
-                logger.error('Sending agreement failed to: '+dataRow[i]['to'])
+                logger.error('Sending agreement failed to: '+dRow['to'])
         else:
             break
 
