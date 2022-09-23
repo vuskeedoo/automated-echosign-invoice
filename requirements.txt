@@ -8,7 +8,7 @@ googleapis-common-protos==1.6.0
 httplib2==0.14.0
 idna==2.8
 oauth2client==4.1.3
-protobuf==3.9.2
+protobuf==3.18.3
 pyasn1==0.4.7
 pyasn1-modules==0.2.6
 PyDrive==1.3.1
